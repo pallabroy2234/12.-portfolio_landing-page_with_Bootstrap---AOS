@@ -1,0 +1,73 @@
+@media (max-width: 991px) {
+  /* Navbar Start Here */
+  .navbar-nav {
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    right: -300px;
+    background-color: var(--black);
+    top: 60px;
+    transition: all 0.4s;
+  }
+  .navbar-nav.active {
+    right: 0px;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .navbar .nav-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .navbar .nav-item:nth-child(1) {
+    margin-top: 1.3rem;
+  }
+
+  .navbar .nav-item:hover::after {
+    width: 0%;
+  }
+
+  /* Portfolio Section Start Here */
+  .overlay {
+    padding: 0 0 0 20px;
+    align-items: center;
+  }
+
+  /* Service Section Start Here */
+  .service:nth-of-type(4) {
+    background: #fff;
+  }
+  .service:nth-of-type(5) {
+    background: var(--c-light);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Hero Section Start Here */
+  .heading-xl {
+    font-size: 3rem;
+  }
+  /* Service Section Start Here */
+  .service:nth-of-type(even) {
+    background: var(--c-light);
+  }
+}
+
+@media (max-width: 575px) {
+  /* Heor Section start here */
+  .hero {
+    min-height: 50vh;
+  }
+  .heading-xl {
+    font-size: 2rem;
+  }
+  .scroll-to-down {
+    bottom: 350px;
+  }
+}
+@media (max-width: 375px) {
+  .scroll-to-down {
+    bottom: 400px;
+    left: 50%;
+  }
+}

@@ -1,0 +1,332 @@
+/* Googel Font */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;500;600;700;800&display=swap");
+
+/* font-family: 'Plus Jakarta Sans', sans-serif;
+ */
+
+/* Browser Reset code */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variable Define */
+:root {
+  /* Color  */
+  --c-brand: #fac562;
+  --c-dark: #333;
+  --c-body: #666;
+  --black: #1b2430;
+  --white: #fff;
+  --c-light: #f8f8f8;
+  /* Font  */
+  --primary-font: "Plus Jakarta Sans", sans-serif;
+
+  /* Responsize Font sizes */
+  --heading-1: clamp(40px, 6vh, 60px);
+  --heading-2: clamp(32px, 4vh, 40px);
+  --heading-xl: clamp(44px, 10vh, 100px);
+}
+/* Global css */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--c-body);
+  font-family: var(--primary-font);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--c-dark);
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+  color: var(--c-brand) !important;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+.wrapper {
+  padding: 4rem 0;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  color: var(--c-dark);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.heading-xl {
+  font-size: var(--heading-xl);
+  text-transform: uppercase;
+}
+.heading-1 {
+  font-size: var(--heading-1);
+}
+.heading-2 {
+  font-size: var(--heading-2);
+}
+
+.heading-3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+.wrapper {
+  padding: 4rem 0;
+}
+
+/* Custom scroll bar  */
+::-webkit-scrollbar {
+  width: 0.625em;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--c-brand);
+}
+
+/* Navbar Start Here  */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: var(--black);
+  transition: all 0.4s;
+  z-index: 9999;
+}
+.navbar.scroll-on {
+  top: -80px;
+}
+.navbar.fixed {
+  top: 0px;
+}
+.navbar .navbar-brand {
+  color: var(--white);
+  font-size: 28px;
+}
+.navbar .nav-item {
+  margin-left: 1.6rem;
+  position: relative;
+}
+.navbar .nav-item::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--c-brand);
+  bottom: 0px;
+  left: 0;
+  transition: all 0.4s ease-in-out;
+}
+.navbar .nav-item:hover::after {
+  width: 100%;
+}
+.navbar .active {
+  color: var(--c-brand) !important;
+}
+.navbar .nav-item .nav-link {
+  color: var(--white);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+.hamburger-menu span {
+  width: 34px;
+  height: 2px;
+  background-color: var(--white);
+  display: block;
+  transition: all 0.4s ease-in-out;
+  margin: 8px auto;
+}
+.hamburger-menu.active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.hamburger-menu.active span:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Hero Section Start Here */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/hero-1.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-top: 55px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  object-fit: cover;
+}
+.hero h1 {
+  color: var(--white);
+}
+.scroll-to-down {
+  width: 30px;
+  height: 60px;
+  display: grid;
+  place-content: center;
+  font-size: 24px;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 100px;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+}
+
+@keyframes scrolltodown {
+  0% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(60%);
+  }
+}
+
+.scroll-to-down .las {
+  animation: scrolltodown 2s linear infinite;
+}
+
+/* Service Section Start Here */
+.service:nth-of-type(even) {
+  background: var(--c-light);
+}
+.service-box {
+  padding: 30px;
+}
+
+.service-box .icon {
+  font-size: 38px;
+  color: var(--c-brand);
+  margin-bottom: 0.7em;
+}
+
+/* Project Section Start Here */
+.project {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.project:hover .overlay {
+  opacity: 1;
+}
+.project img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease-in-out;
+}
+.project:hover img {
+  transform: rotate(15deg) scale(1.5);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 44px;
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.project .overlay p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Blog Section Start Here */
+#blog {
+  background: var(--c-light);
+}
+
+.blog-post h3 {
+  margin-top: 1em;
+}
+
+/* Contact Us Section Start Here */
+.contact-widget ul li {
+  margin-bottom: 0.8em;
+}
+
+.group {
+  margin-bottom: 2em;
+}
+.group .form-control {
+  padding: 16px 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.group .form-control:focus {
+  box-shadow: none;
+}
+.form-btn {
+  padding: 15px 30px;
+  border: 1px solid var(--c-brand);
+  color: var(--c-brand);
+  background: transparent;
+  transition: all 0.4s;
+  border-radius: 5px;
+}
+.form-btn:hover {
+  background: var(--c-brand);
+  color: var(--white);
+}
+
+/* Footer Section Start Here */
+#footer {
+  background: var(--c-dark);
+}
+#footer p {
+  color: var(--white);
+}
+
+.footer-wrapper {
+  padding: 4rem 0 1.5rem 0;
+}
+
+.social-icon a {
+  color: var(--white);
+  margin-left: 0.6em;
+  font-size: 1.8em;
+}
